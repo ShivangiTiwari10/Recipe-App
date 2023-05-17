@@ -6,4 +6,7 @@
     <string name="my_good_food">My Good Food</string>
     <string name="search">Search</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="search_fragment">Search Fragment</string>
+    <string name="good_food">Good Food</string>
 </resources>
