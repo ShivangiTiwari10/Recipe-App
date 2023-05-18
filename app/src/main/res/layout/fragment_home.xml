@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/recipe_items" />
