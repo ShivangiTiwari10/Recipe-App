@@ -9,4 +9,6 @@
     <string name="home_fragment">Home Fragment</string>
     <string name="search_fragment">Search Fragment</string>
     <string name="good_food">Good Food</string>
+    <string name="recipename">recipeName</string>
+    <string name="recipe_discription">recipe discription</string>
 </resources>
