@@ -11,4 +11,9 @@
     <string name="good_food">Good Food</string>
     <string name="recipename">recipeName</string>
     <string name="recipe_discription">recipe discription</string>
+    <string name="id">Id</string>
+    <string name="likes">Likes</string>
+    <string name="uased">Uased</string>
+    <string name="missed">Missed</string>
+    <string name="title">Title</string>
 </resources>

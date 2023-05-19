@@ -1,8 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecepiDetail">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20sp"
+        android:text="@string/title"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+
+    <ImageView
+        android:id="@+id/recipeImage"
+        android:layout_width="409dp"
+        android:layout_height="314dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/textMissed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20sp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/missed"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImage" />
+
+    <TextView
+        android:id="@+id/textUsed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20sp"
+        android:text="@string/uased"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/textMissed"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <TextView
+        android:id="@+id/likes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20sp"
+        android:text="@string/likes"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/textUsed"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <TextView
+        android:id="@+id/Id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20sp"
+        android:text="@string/id"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/likes"
+        tools:layout_editor_absoluteX="20dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
