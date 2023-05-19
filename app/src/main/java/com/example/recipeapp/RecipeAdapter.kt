@@ -1,5 +1,6 @@
 package com.example.recipeapp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,16 @@ import com.squareup.picasso.Picasso
 class RecipeAdapter(private val context: Context, val recipeist: List<recipeDataItem>) :
     RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
+    private lateinit var myListener: onItemClickListener
+
+    interface onItemClickListener {
+        fun onItemClicking(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener) {
+        myListener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
 
         val itemView = LayoutInflater.from(context).inflate(R.layout.recipe_items, parent, false)
@@ -23,15 +34,22 @@ class RecipeAdapter(private val context: Context, val recipeist: List<recipeData
         )
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
 
         val currentItem = recipeist[position]
         holder.title.text = currentItem.title
-        holder.detail.text = currentItem.imageType
+        holder.detail.text = "usedIngredient: ${currentItem.usedIngredientCount}"
 
         Picasso.get().load(currentItem.image).into(holder.imagee)
         Log.d("TiTle", currentItem.title)
         Log.d("imageType", currentItem.imageType)
+
+        holder.rating.rating = currentItem.likes.toFloat()
+
+        holder.itemView.setOnClickListener {
+            myListener.onItemClicking(position)
+        }
 
     }
 
