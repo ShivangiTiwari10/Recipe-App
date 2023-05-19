@@ -45,7 +45,7 @@ class RecipeAdapter(private val context: Context, val recipeist: List<recipeData
         Log.d("TiTle", currentItem.title)
         Log.d("imageType", currentItem.imageType)
 
-        holder.rating.rating = currentItem.likes.toFloat()
+        holder.ratingg.rating = currentItem.likes.toFloat()
 
         holder.itemView.setOnClickListener {
             myListener.onItemClicking(position)
@@ -63,13 +63,13 @@ class RecipeAdapter(private val context: Context, val recipeist: List<recipeData
         val title: TextView
         val imagee: ShapeableImageView
         val detail: TextView
-        val rating: RatingBar
+        val ratingg: RatingBar
 
         init {
             title = itemView.findViewById(R.id.recipeTitle)
             imagee = itemView.findViewById(R.id.productImage)
             detail = itemView.findViewById(R.id.recipeDiscription)
-            rating = itemView.findViewById(R.id.ratingbar)
+            ratingg = itemView.findViewById(R.id.ratingbar)
         }
 
     }

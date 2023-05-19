@@ -51,7 +51,7 @@ class ShowRecipe : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                onBackPressedDispatcher.onBackPressed()
+               onBackPressed()
                 if (i == 0) {
                     finish()
                 }
