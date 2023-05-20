@@ -8,7 +8,8 @@ interface RecipeApiInterFace {
     @GET("recipes/findByIngredients")
 
     fun getRecipeData(
-    @Query("ingredients") ingredients: String,
-    @Query("apiKey") apiKey: String): Call<recipeData>
-
+        @Query("ingredients") ingredients: String,
+//        @Query("number") number: Int,
+        @Query("apiKey") apiKey: String
+    ): Call<recipeData>
 }
