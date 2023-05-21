@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.recipeapp.R
 import com.example.recipeapp.RecepiDetail
 import com.example.recipeapp.adapter.RecipeAdapter
-import com.example.recipeapp.RecipeApiInterFace
+import com.example.recipeapp.interfaces.RecipeApiInterFace
 import com.example.recipeapp.databinding.FragmentHomeBinding
 import com.example.recipeapp.homeData.recipeData
 import retrofit2.Call
@@ -74,6 +76,11 @@ class HomeFragment : Fragment() {
                 Log.d("MyRetrofitActivity", "onFailure ${t.message}")
             }
         })
+
+        binding.txtRandom.setOnClickListener {
+
+            findNavController().navigate(R.id.action_homeFragment2_to_goodFoodFragment)
+        }
         return binding.root
     }
 
