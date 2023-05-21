@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recipeapp.R
+import com.example.recipeapp.homeData.recipeDataItem
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 

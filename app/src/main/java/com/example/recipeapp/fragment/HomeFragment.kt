@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipeapp.RecepiDetail
-import com.example.recipeapp.RecipeAdapter
+import com.example.recipeapp.adapter.RecipeAdapter
 import com.example.recipeapp.RecipeApiInterFace
 import com.example.recipeapp.databinding.FragmentHomeBinding
-import com.example.recipeapp.recipeData
+import com.example.recipeapp.homeData.recipeData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -68,7 +68,6 @@ class HomeFragment : Fragment() {
                         startActivity(intent)
                     }
                 })
-
             }
 
             override fun onFailure(call: Call<recipeData?>, t: Throwable) {
