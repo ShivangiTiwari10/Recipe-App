@@ -1,5 +1,6 @@
-package com.example.recipeapp
+package com.example.recipeapp.homeData
 
+class recipeData : ArrayList<recipeDataItem>()
 data class UsedIngredient(
     val aisle: String,
     val amount: Double,
