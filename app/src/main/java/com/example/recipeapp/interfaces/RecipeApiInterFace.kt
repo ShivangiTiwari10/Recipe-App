@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.interfaces
 
 import com.example.recipeapp.homeData.recipeData
 import retrofit2.Call
