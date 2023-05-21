@@ -7,16 +7,71 @@
     tools:context=".fragment.HomeFragment">
 
 
+    <TextView
+        android:id="@+id/txtRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="@string/random"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/starter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/starter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/starter"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mains"
+        app:layout_constraintStart_toEndOf="@+id/txtRandom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/mains"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/mains"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dessert"
+        app:layout_constraintStart_toEndOf="@+id/starter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dessert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/dessert"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/mains"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/mains"
         tools:listitem="@layout/recipe_items" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

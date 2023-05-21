@@ -16,4 +16,8 @@
     <string name="uased">Uased</string>
     <string name="missed">Missed</string>
     <string name="title">Title</string>
+    <string name="random">random</string>
+    <string name="starter">starter</string>
+    <string name="mains">mains</string>
+    <string name="dessert">dessert</string>
 </resources>
