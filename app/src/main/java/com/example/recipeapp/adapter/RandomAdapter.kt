@@ -45,10 +45,8 @@ class RandomAdapter(private val context: Context, val recipies: List<Recipe>) :
         val currntItem = recipies[position]
 
         holder.text1.text = currntItem.title
-        holder.text2.text = currntItem.title
 
         Picasso.get().load(currntItem.image).into(holder.image1)
-        Picasso.get().load(currntItem.image).into(holder.image2)
 
         holder.itemView.setOnClickListener {
             myListener.onItemClicking(position)
@@ -60,15 +58,11 @@ class RandomAdapter(private val context: Context, val recipies: List<Recipe>) :
     class RandomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val image1: ImageView
-        val image2: ImageView
         val text1: TextView
-        val text2: TextView
 
         init {
             image1 = itemView.findViewById(R.id.card1img)
-            image2 = itemView.findViewById(R.id.card2img)
             text1 = itemView.findViewById(R.id.txt1)
-            text2 = itemView.findViewById(R.id.text2)
         }
 
     }
