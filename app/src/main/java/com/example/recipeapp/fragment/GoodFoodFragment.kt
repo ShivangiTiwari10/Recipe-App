@@ -60,6 +60,16 @@ class GoodFoodFragment : Fragment() {
                         val clickedRecipe = randomRecipeList[position]
 
                         val intent = Intent(requireContext(), RandomActivity::class.java)
+                        intent.putExtra("Image", clickedRecipe.image)
+                        intent.putExtra("Title", clickedRecipe.title)
+                        intent.putExtra("Detail", "Instruction:\n${clickedRecipe.instructions}")
+                        intent.putExtra(
+                            "PrizeServing",
+                            "PrizePerServing:\n ${clickedRecipe.pricePerServing}"
+                        )
+                        intent.putExtra("summery", "Summary:\n ${clickedRecipe.summary}")
+                        intent.putExtra("ready", "ReadyIn:\n ${clickedRecipe.readyInMinutes} Minutes")
+
                         startActivity(intent)
                     }
 
