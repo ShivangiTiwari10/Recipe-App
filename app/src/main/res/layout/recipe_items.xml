@@ -14,11 +14,10 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/productImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="10dp"
             android:scaleType="centerCrop"
-
             android:src="@drawable/ic_launcher_background">
 
         </com.google.android.material.imageview.ShapeableImageView>
@@ -29,7 +28,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/recipeTitle"
+                android:id="@+id/dishTypes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -45,15 +44,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="@string/recipe_discription"
-                android:textSize="20sp"
-                android:textStyle="bold">
+                android:textSize="15sp"
+                android:textColor="@color/purple_700"
+                android:textStyle="normal">
 
             </TextView>
 
-            <RatingBar
-                android:id="@+id/ratingbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+
 
         </LinearLayout>
 
