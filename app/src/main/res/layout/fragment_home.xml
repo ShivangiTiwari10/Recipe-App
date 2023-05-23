@@ -6,67 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
 
-
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/search_by_filter"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/txtRandom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#CF6156"
         android:text="@string/random"
-        android:textColor="@color/purple_700"
+        android:textAllCaps="false"
+        android:textColor="#F3F3F3"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/starter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/starter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#E3695E"
         android:text="@string/starter"
-        android:textColor="@color/purple_700"
+        android:textAllCaps="false"
+        android:textColor="#F3F3F3"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/mains"
         app:layout_constraintStart_toEndOf="@+id/txtRandom"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/mains"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DC7C73"
         android:text="@string/mains"
-        android:textColor="@color/purple_700"
+        android:textAllCaps="false"
+        android:textColor="#F3F3F3"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dessert"
-        app:layout_constraintStart_toEndOf="@+id/starter"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/txtRandom"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="@+id/txtRandom"
+        app:layout_constraintTop_toBottomOf="@+id/txtRandom" />
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/dessert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DC7C73"
         android:text="@string/dessert"
-        android:textColor="@color/purple_700"
+        android:textAllCaps="false"
+        android:textColor="#EFEEF1"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/mains"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="@+id/starter"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/starter"
+        app:layout_constraintTop_toBottomOf="@+id/starter" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
