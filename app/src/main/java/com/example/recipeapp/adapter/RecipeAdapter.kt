@@ -6,15 +6,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.R
-import com.example.recipeapp.homeData.recipeDataItem
+import com.example.recipeapp.homeData.Result
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
-class RecipeAdapter(private val context: Context, val recipeist: List<recipeDataItem>) :
+class RecipeAdapter(private val context: Context, val recipeist: List<Result>) :
     RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
     private lateinit var myListener: onItemClickListener
@@ -40,18 +39,16 @@ class RecipeAdapter(private val context: Context, val recipeist: List<recipeData
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
 
         val currentItem = recipeist[position]
-        holder.title.text = currentItem.title
-        holder.detail.text = "usedIngredient: ${currentItem.usedIngredientCount}"
+
+        holder.dishTypes.text = currentItem.title
+        holder.discription.text = currentItem.cookingMinutes.toString()
 
         Picasso.get().load(currentItem.image).into(holder.imagee)
-        Log.d("TiTle", currentItem.title)
-        Log.d("imageType", currentItem.imageType)
 
-        holder.ratingg.rating = currentItem.likes.toFloat()
 
-        holder.itemView.setOnClickListener {
-            myListener.onItemClicking(position)
-        }
+//        holder.itemView.setOnClickListener {
+//            myListener.onItemClicking(position)
+//        }
 
     }
 
@@ -62,17 +59,14 @@ class RecipeAdapter(private val context: Context, val recipeist: List<recipeData
     }
 
     class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView
         val imagee: ShapeableImageView
-        val detail: TextView
-        val ratingg: RatingBar
+        val dishTypes: TextView
+        val discription: TextView
 
         init {
-            title = itemView.findViewById(R.id.recipeTitle)
             imagee = itemView.findViewById(R.id.productImage)
-            detail = itemView.findViewById(R.id.recipeDiscription)
-            ratingg = itemView.findViewById(R.id.ratingbar)
+            dishTypes = itemView.findViewById(R.id.dishTypes)
+            discription = itemView.findViewById(R.id.recipeDiscription)
         }
-
     }
 }
