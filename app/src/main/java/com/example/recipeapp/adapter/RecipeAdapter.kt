@@ -46,10 +46,9 @@ class RecipeAdapter(private val context: Context, val recipeist: List<Result>) :
         Picasso.get().load(currentItem.image).into(holder.imagee)
 
 
-//        holder.itemView.setOnClickListener {
-//            myListener.onItemClicking(position)
-//        }
-
+        holder.itemView.setOnClickListener {
+            myListener.onItemClicking(position)
+        }
     }
 
     override fun getItemCount(): Int {

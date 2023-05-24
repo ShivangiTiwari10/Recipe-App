@@ -1,5 +1,6 @@
 package com.example.recipeapp.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.recipeapp.R
+import com.example.recipeapp.*
 import com.example.recipeapp.adapter.RecipeAdapter
 import com.example.recipeapp.databinding.FragmentHomeBinding
 import com.example.recipeapp.homeData.ComplexSearch
@@ -73,6 +74,16 @@ class HomeFragment : Fragment() {
                 binding.myRecycler.layoutManager = LinearLayoutManager(requireContext())
 
 
+                myAdapter.setOnItemClickListener(object : RecipeAdapter.onItemClickListener {
+                    override fun onItemClicking(position: Int) {
+
+                        val clickedStarter = complexrecipeList[position]
+                        val intent = Intent(requireContext(), StarterActivity::class.java)
+                        startActivity(intent)
+                    }
+                })
+
+
             }
 
             override fun onFailure(call: Call<ComplexSearch?>, t: Throwable) {
@@ -107,6 +118,17 @@ class HomeFragment : Fragment() {
 
                 binding.myRecycler.adapter = myAdapter
                 binding.myRecycler.layoutManager = LinearLayoutManager(requireContext())
+
+
+                myAdapter.setOnItemClickListener(object : RecipeAdapter.onItemClickListener {
+                    override fun onItemClicking(position: Int) {
+
+                        val clickedStarter = complexrecipeList[position]
+                        val intent = Intent(requireContext(), DessertActivity::class.java)
+                        startActivity(intent)
+
+                    }
+                })
 
             }
 
@@ -143,6 +165,16 @@ class HomeFragment : Fragment() {
 
                 binding.myRecycler.adapter = myAdapter
                 binding.myRecycler.layoutManager = LinearLayoutManager(requireContext())
+
+                myAdapter.setOnItemClickListener(object : RecipeAdapter.onItemClickListener {
+                    override fun onItemClicking(position: Int) {
+                        val clickedStarter = complexrecipeList[position]
+
+                        val intent = Intent(requireContext(), MainsActivity::class.java)
+                        startActivity(intent)
+                    }
+                })
+
             }
 
             override fun onFailure(call: Call<ComplexSearch?>, t: Throwable) {
