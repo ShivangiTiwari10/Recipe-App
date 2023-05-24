@@ -18,58 +18,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
+    <TextView
         android:id="@+id/txtRandom"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="44dp"
-        android:backgroundTint="#CF6156"
+        android:background="@drawable/my_button_bg"
         android:text="@string/random"
         android:textAllCaps="false"
-        android:textColor="#F3F3F3"
         android:textSize="20sp"
+        android:textColor="#119144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
+    <TextView
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@drawable/my_button_bg"
         android:id="@+id/starter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="44dp"
-        android:backgroundTint="#E3695E"
         android:text="@string/starter"
         android:textAllCaps="false"
-        android:textColor="#F3F3F3"
+        android:textColor="#119144"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/txtRandom"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
+    <TextView
         android:id="@+id/mains"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@drawable/my_button_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#DC7C73"
         android:text="@string/mains"
         android:textAllCaps="false"
-        android:textColor="#F3F3F3"
+        android:textColor="#3D8331"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/txtRandom"
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="@+id/txtRandom"
         app:layout_constraintTop_toBottomOf="@+id/txtRandom" />
 
-    <com.google.android.material.button.MaterialButton
+    <TextView
         android:id="@+id/dessert"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:background="@drawable/my_button_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#DC7C73"
         android:text="@string/dessert"
         android:textAllCaps="false"
-        android:textColor="#EFEEF1"
+        android:textColor="#5C9136"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/starter"
         app:layout_constraintHorizontal_bias="0.0"
