@@ -7,6 +7,7 @@
     tools:context=".fragment.HomeFragment">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -14,7 +15,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,24 +24,24 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/my_button_bg"
         android:text="@string/random"
         android:textAllCaps="false"
-        android:textSize="20sp"
         android:textColor="#119144"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:background="@drawable/my_button_bg"
         android:id="@+id/starter"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="44dp"
+        android:background="@drawable/my_button_bg"
         android:text="@string/starter"
         android:textAllCaps="false"
         android:textColor="#119144"
@@ -51,34 +52,33 @@
     <TextView
         android:id="@+id/mains"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:background="@drawable/my_button_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/my_button_bg"
         android:text="@string/mains"
         android:textAllCaps="false"
         android:textColor="#3D8331"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtRandom"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="@+id/txtRandom"
-        app:layout_constraintTop_toBottomOf="@+id/txtRandom" />
+        app:layout_constraintBottom_toBottomOf="@+id/starter"
+        app:layout_constraintStart_toEndOf="@+id/starter"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/dessert"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:background="@drawable/my_button_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/my_button_bg"
         android:text="@string/dessert"
         android:textAllCaps="false"
         android:textColor="#5C9136"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/starter"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/starter"
-        app:layout_constraintTop_toBottomOf="@+id/starter" />
+        app:layout_constraintBottom_toBottomOf="@+id/mains"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mains" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecycler"
