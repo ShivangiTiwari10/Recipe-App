@@ -8,7 +8,7 @@
     app:cardElevation="5dp"
     app:cardBackgroundColor="#CDBDF1"
     app:cardCornerRadius="10dp"
-    tools:context=".RandomActivity">
+    tools:context=".activity.RandomActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

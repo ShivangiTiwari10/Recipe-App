@@ -1,10 +1,11 @@
-package com.example.recipeapp
+package com.example.recipeapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.PopupMenu
 import androidx.navigation.fragment.findNavController
+import com.example.recipeapp.R
 import com.example.recipeapp.databinding.ActivityShowRecipeBinding
 
 class ShowRecipe : AppCompatActivity() {

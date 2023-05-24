@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.recipeapp.RandomActivity
+import com.example.recipeapp.activity.RandomActivity
 import com.example.recipeapp.adapter.RandomAdapter
 import com.example.recipeapp.databinding.FragmentGoodFoodBinding
 import com.example.recipeapp.goodFoodData.GoodFoodData

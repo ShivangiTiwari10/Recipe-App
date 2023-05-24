@@ -3,6 +3,7 @@ package com.example.recipeapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.recipeapp.activity.ShowRecipe
 import com.example.recipeapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 

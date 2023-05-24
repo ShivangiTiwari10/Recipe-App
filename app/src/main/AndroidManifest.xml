@@ -15,42 +15,42 @@
         android:theme="@style/Theme.RecipeApp"
         tools:targetApi="31">
         <activity
-            android:name=".DessertActivity"
+            android:name=".activity.DessertActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainsActivity"
+            android:name=".activity.MainsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".StarterActivity"
+            android:name=".activity.StarterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RandomActivity"
+            android:name=".activity.RandomActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RecepiDetail"
+            android:name=".activity.RecepiDetail"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ShowRecipe"
+            android:name=".activity.ShowRecipe"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

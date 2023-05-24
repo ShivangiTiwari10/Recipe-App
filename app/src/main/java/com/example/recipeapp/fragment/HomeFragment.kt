@@ -10,6 +10,9 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipeapp.*
+import com.example.recipeapp.activity.DessertActivity
+import com.example.recipeapp.activity.MainsActivity
+import com.example.recipeapp.activity.StarterActivity
 import com.example.recipeapp.adapter.RecipeAdapter
 import com.example.recipeapp.databinding.FragmentHomeBinding
 import com.example.recipeapp.homeData.ComplexSearch
