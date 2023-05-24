@@ -16,13 +16,13 @@
             android:layout_width="368dp"
             android:layout_height="289dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
             android:src="@drawable/food"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/todo" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -35,36 +35,39 @@
             app:layout_constraintHorizontal_bias="0.787"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipeImage" />
-  <TextView
+
+        <TextView
             android:id="@+id/textView"
             android:layout_width="369dp"
             android:layout_height="19dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:text="@string/todo"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.787"
+            app:layout_constraintHorizontal_bias="0.757"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipeImage" />
 
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
-            android:layout_margin="5dp"
+            android:layout_width="387dp"
+            android:layout_height="253dp"
+            android:layout_marginTop="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeTitle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0">
 
 
             <TextView
-                android:id="@+id/analyzedInstruction"
+                android:id="@+id/summarytext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/todo" />
 
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
