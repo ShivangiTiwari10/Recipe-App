@@ -2,7 +2,6 @@ package com.example.recipeapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.PopupMenu
 import androidx.navigation.fragment.findNavController
 import com.example.recipeapp.R
@@ -50,13 +49,14 @@ class ShowRecipe : AppCompatActivity() {
             }
         }
 
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-               onBackPressed()
-                if (i == 0) {
-                    finish()
-                }
-            }
-        })
     }
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (i == 0) {
+            finish()
+        }
+
+    }
+
 }
