@@ -62,7 +62,7 @@
 
 
             <TextView
-                android:id="@+id/summarytext"
+                android:id="@+id/stepstext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/todo" />
