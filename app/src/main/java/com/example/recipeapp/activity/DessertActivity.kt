@@ -26,6 +26,6 @@ class DessertActivity : AppCompatActivity() {
 
 
         val analyzedInstructions = intent.getStringArrayListExtra("AnalyzedInstructions")
-        binding.stepstext.text = analyzedInstructions.toString()
+        binding.stepstext.text = "Instructions:${analyzedInstructions.toString()}"
     }
 }
