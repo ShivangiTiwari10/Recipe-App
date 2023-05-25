@@ -24,11 +24,11 @@ class MainsActivity : AppCompatActivity() {
 
 
         Picasso.get().load(image).into(binding.recipeImage)
-        binding.recipeTitle.text = title
-        binding.textView.text = "Time: $cooking Minutes"
+        binding.recipeTitle.text =" Recipe:$title"
+        binding.textView.text = "Time: $cooking minutes"
 
         val analyzedInstructions = intent.getStringArrayListExtra("AnalyzedInstructions")
-        binding.stepstext.text = analyzedInstructions.toString()
+        binding.stepstext.text = "Instruction: ${analyzedInstructions.toString()}"
 
         val ingredient = intent.getStringExtra("Ingredient")
         binding.textIngredient.text = ingredient
