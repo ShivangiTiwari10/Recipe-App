@@ -30,6 +30,7 @@ class MainsActivity : AppCompatActivity() {
         val analyzedInstructions = intent.getStringArrayListExtra("AnalyzedInstructions")
         binding.stepstext.text = analyzedInstructions.toString()
 
-
+        val ingredient = intent.getStringExtra("Ingredient")
+        binding.textIngredient.text = ingredient
     }
 }
