@@ -18,7 +18,7 @@ class StarterActivity : AppCompatActivity() {
         setContentView(binding.root)
         val image = intent.getStringExtra("Image")
         val title = intent.getStringExtra("title")
-        val cooking = intent.getStringExtra("cooking")
+        val cooking = intent.getStringExtra("cookingMinutes")
 
         Picasso.get().load(image).into(binding.recipeImage)
         binding.recipeTitle.text = "Recipe Name: $title"
