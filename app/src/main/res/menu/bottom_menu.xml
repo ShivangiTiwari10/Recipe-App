@@ -10,9 +10,5 @@
         android:id="@+id/goodFoodFragment"
         android:icon="@drawable/favfood"
         android:title="@string/my_good_food" />
-    <item
-        android:id="@+id/searchFragment"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="@string/search" />
 
 </menu>
