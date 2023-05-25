@@ -11,6 +11,7 @@ interface RecipeApiInterFace {
         @Query("apiKey") apiKey: String,
 //        @Query("number") number: Int,
         @Query("type") type: String,
+        @Query("addRecipeInformation") addRecipeInformation: Boolean,
         @Query("number") number: Int
 
     ): Call<ComplexSearch>
