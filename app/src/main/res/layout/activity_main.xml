@@ -20,7 +20,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30sp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="monospace"
         android:text="@string/wellcome_to_my_recipe"
         android:textColor="#CD3175"
         android:textSize="35sp"
