@@ -2,6 +2,7 @@ package com.example.recipeapp.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -59,7 +60,7 @@ class HomeFragment : Fragment() {
             .create(RecipeApiInterFace::class.java)
 
         val retrofitData = retrofitBuilder.getRecipeData(
-            "162f6608c8314f2782a1770b7c758cd7", "snack", 20
+            "162f6608c8314f2782a1770b7c758cd7", "snack", true, 20,
         )
 
         retrofitData.enqueue(object : Callback<ComplexSearch?> {
@@ -82,8 +83,25 @@ class HomeFragment : Fragment() {
 
                         val clickedStarter = complexrecipeList[position]
                         val intent = Intent(requireContext(), StarterActivity::class.java)
+                        intent.putExtra("Image", clickedStarter.image)
+                        intent.putExtra("title", clickedStarter.title)
+
+                        intent.putExtra("summary", clickedStarter.summary)
+//                        intent.putExtra("stepps",clickedStarter.)
+                        intent.putExtra("cookingMinutes", clickedStarter.cookingMinutes.toString())
+
+                        val analyzedInstructions = clickedStarter.analyzedInstructions
+
+                        if (analyzedInstructions.isNotEmpty()) {
+                            val steps = analyzedInstructions[0].steps.map { it.step }
+                            intent.putStringArrayListExtra("AnalyzedInstructions", ArrayList(steps))
+                        } else {
+                            intent.putStringArrayListExtra("AnalyzedInstructions", ArrayList())
+                        }
+
                         startActivity(intent)
                     }
+
                 })
 
 
@@ -93,7 +111,6 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), "ApiNot calling", Toast.LENGTH_SHORT).show()
             }
         })
-
 
     }
 
@@ -106,7 +123,7 @@ class HomeFragment : Fragment() {
             .create(RecipeApiInterFace::class.java)
 
         val retrofitData = retrofitBuilder.getRecipeData(
-            "162f6608c8314f2782a1770b7c758cd7", "dessert", 20
+            "162f6608c8314f2782a1770b7c758cd7", "dessert", true, 20
         )
         retrofitData.enqueue(object : Callback<ComplexSearch?> {
             override fun onResponse(
@@ -128,6 +145,19 @@ class HomeFragment : Fragment() {
 
                         val clickedStarter = complexrecipeList[position]
                         val intent = Intent(requireContext(), DessertActivity::class.java)
+                        intent.putExtra("Image", clickedStarter.image)
+                        intent.putExtra("title", clickedStarter.title)
+                        intent.putExtra("cookingMinutes", clickedStarter.cookingMinutes.toString())
+
+
+                        val analyzedInstructions = clickedStarter.analyzedInstructions
+                        if (analyzedInstructions.isNotEmpty()) {
+                            val steps = analyzedInstructions[0].steps.map { it.step }
+                            intent.putStringArrayListExtra("AnalyzedInstructions", ArrayList(steps))
+                        } else {
+                            intent.putStringArrayListExtra("AnalyzedInstructions", ArrayList())
+                        }
+
                         startActivity(intent)
 
                     }
@@ -153,7 +183,7 @@ class HomeFragment : Fragment() {
             .create(RecipeApiInterFace::class.java)
 
         val retrofitData = retrofitBuilder.getRecipeData(
-            "162f6608c8314f2782a1770b7c758cd7", "main course", 20
+            "162f6608c8314f2782a1770b7c758cd7", "main course", true, 20
         )
 
         retrofitData.enqueue(object : Callback<ComplexSearch?> {
@@ -171,9 +201,34 @@ class HomeFragment : Fragment() {
 
                 myAdapter.setOnItemClickListener(object : RecipeAdapter.onItemClickListener {
                     override fun onItemClicking(position: Int) {
-                        val clickedStarter = complexrecipeList[position]
+                        val clickedMainsData = complexrecipeList[position]
 
                         val intent = Intent(requireContext(), MainsActivity::class.java)
+                        intent.putExtra("Image", clickedMainsData.image)
+                        intent.putExtra("title", clickedMainsData.title)
+                        intent.putExtra(
+                            "cookingMinutes",
+                            clickedMainsData.cookingMinutes.toString()
+                        )
+
+
+                        val analyzedInstructions = clickedMainsData.analyzedInstructions
+
+                        if (analyzedInstructions.isNotEmpty()) {
+                            val steps = analyzedInstructions[0].steps.map { it.step }
+                            intent.putStringArrayListExtra("AnalyzedInstructions", ArrayList(steps))
+                        } else {
+                            intent.putStringArrayListExtra("AnalyzedInstructions", ArrayList())
+                        }
+
+                        val ingredient = clickedMainsData.analyzedInstructions
+
+                        if (ingredient.isNotEmpty()) {
+                            val ingred = ingredient[0].steps.map { it.ingredients }
+                            intent.putExtra("Ingredient", ingred[0].toString())
+                        } else {
+                            Log.d("ingredient", " Data Not found")
+                        }
                         startActivity(intent)
                     }
                 })
@@ -184,7 +239,5 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), "ApiNot calling", Toast.LENGTH_SHORT).show()
             }
         })
-
-
     }
 }
