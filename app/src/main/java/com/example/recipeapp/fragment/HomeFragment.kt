@@ -1,5 +1,6 @@
 package com.example.recipeapp.fragment
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -27,6 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var dialog: AlertDialog
 
     private lateinit var myAdapter: RecipeAdapter
     override fun onCreateView(
@@ -36,11 +38,19 @@ class HomeFragment : Fragment() {
 //        // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
+
+        dialog = AlertDialog.Builder(requireContext()).setView(R.layout.loading_layout)
+            .setCancelable(false)
+            .create()
+
+//        dialog = BuildConfig
+
         binding.starter.setOnClickListener {
             starterData()
         }
         binding.mains.setOnClickListener {
             mainsData()
+
         }
         binding.dessert.setOnClickListener {
             dessertData()
@@ -53,6 +63,8 @@ class HomeFragment : Fragment() {
     }
 
     fun starterData() {
+        dialog.show()
+
         val retrofitBuilder = Retrofit.Builder()
             .baseUrl("https://api.spoonacular.com/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -70,6 +82,8 @@ class HomeFragment : Fragment() {
             ) {
 
                 val responseBody = response.body()
+                dialog.dismiss()
+
                 val complexrecipeList = responseBody?.results ?: emptyList()
 
                 myAdapter = RecipeAdapter(requireContext(), complexrecipeList)
@@ -115,6 +129,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun dessertData() {
+        dialog.show()
+
         val retrofitBuilder = Retrofit.Builder()
 
             .baseUrl("https://api.spoonacular.com/")
@@ -132,6 +148,8 @@ class HomeFragment : Fragment() {
             ) {
 
                 val responseBody = response.body()
+                dialog.dismiss()
+
                 val complexrecipeList = responseBody?.results ?: emptyList()
 
                 myAdapter = RecipeAdapter(requireContext(), complexrecipeList)
@@ -175,6 +193,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun mainsData() {
+        dialog.show()
+
         val retrofitBuilder = Retrofit.Builder()
 
             .baseUrl("https://api.spoonacular.com/")
@@ -192,6 +212,8 @@ class HomeFragment : Fragment() {
                 response: Response<ComplexSearch?>
             ) {
                 val responseBody = response.body()
+                dialog.dismiss()
+
                 val complexrecipeList = responseBody?.results ?: emptyList()
 
                 myAdapter = RecipeAdapter(requireContext(), complexrecipeList)

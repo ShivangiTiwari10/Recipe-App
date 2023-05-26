@@ -1,5 +1,6 @@
 package com.example.recipeapp.fragment
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.recipeapp.R
 import com.example.recipeapp.activity.RandomActivity
 import com.example.recipeapp.adapter.RandomAdapter
 import com.example.recipeapp.databinding.FragmentGoodFoodBinding
@@ -23,6 +25,8 @@ class GoodFoodFragment : Fragment() {
     private lateinit var binding: FragmentGoodFoodBinding
     private lateinit var myAdapter: RandomAdapter
 
+    private lateinit var dialog: AlertDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,6 +34,10 @@ class GoodFoodFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentGoodFoodBinding.inflate(layoutInflater)
+        dialog = AlertDialog.Builder(requireContext()).setView(R.layout.loading_layout)
+            .setCancelable(false)
+            .create()
+        dialog.show()
 
         val retrofitBuilder = Retrofit.Builder()
             .baseUrl("https://api.spoonacular.com/")
@@ -47,8 +55,9 @@ class GoodFoodFragment : Fragment() {
             override fun onResponse(call: Call<GoodFoodData?>, response: Response<GoodFoodData?>) {
 
                 val responseBody = response.body()
-                val randomRecipeList = responseBody?.recipes ?: emptyList()
+                dialog.dismiss()
 
+                val randomRecipeList = responseBody?.recipes ?: emptyList()
                 myAdapter = RandomAdapter(requireContext(), randomRecipeList)
                 binding.randomRecycler.adapter = myAdapter
                 binding.randomRecycler.layoutManager = LinearLayoutManager(requireContext())
@@ -68,7 +77,10 @@ class GoodFoodFragment : Fragment() {
                             "PrizePerServing:\n ${clickedRecipe.pricePerServing}"
                         )
                         intent.putExtra("summery", "Summary:\n ${clickedRecipe.summary}")
-                        intent.putExtra("ready", "ReadyIn:\n ${clickedRecipe.readyInMinutes} Minutes")
+                        intent.putExtra(
+                            "ready",
+                            "ReadyIn:\n ${clickedRecipe.readyInMinutes} Minutes"
+                        )
 
                         startActivity(intent)
                     }
