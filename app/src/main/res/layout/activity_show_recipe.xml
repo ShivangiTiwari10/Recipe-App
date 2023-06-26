@@ -20,7 +20,7 @@
         app:navGraph="@navigation/nav" />
 
     <me.ibrahimsn.lib.SmoothBottomBar
-        app:backgroundColor="@color/purple_700"
+        app:backgroundColor="#D6AA25"
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
